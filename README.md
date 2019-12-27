@@ -39,7 +39,7 @@ node .
 2 - Con Postman ejecute un POST
     URL:   ```http://localhost:3000/api/pkgen/types?```
 
-    Header:  ```Content-Type: "application/json"
+    Header:  Content-Type: "application/json"
 
     Body:  {
     "owner": "OMARIOT",
