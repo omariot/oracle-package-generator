@@ -22,6 +22,7 @@ Recibe como parámetro el nombre de una table y muestra por output el código pa
 
 ## Webservices con NodeJS
 
+Primero debes tener instalado nodejs en tu equipo
 recuerde instalar los paquetes necesarios de Node ```npm install```
 
 edite el archivo NodeJs/oracle_restapi_app/config/database.js y coloque las credenciales de conexion de su base de datos Oracle
