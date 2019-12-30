@@ -6,13 +6,16 @@ Recibe como parámetro el nombre de una table y muestra por output el código pa
 ## Instalación:
 
 1 - Conectese a Oracle a traves de un editor de PL/SQL con un usuario con privilegios DBA
+
 2 - Ejecute el siguiente script en SQL Plus:
         ```@0- Install_Pkgen.sql```
 
 ## Ejemplos en PL/SQL:
 
 ```@6-Run_singleTest_Pkg_Generator.sql``` para generar un package simple de una sola tabla.
+
 ```@7-Run_EntireSchema_Test_Pkg_Generator.sql``` para generar packages de todas las tablas de un schema.
+
 ```@8-Run_EntireSchemaWithFiles_Test_Pkg_Generator.sql``` para generar package de todoas las tabla de un schema en archivos de scripts.
 
 
