@@ -758,6 +758,27 @@ CREATE OR REPLACE PACKAGE BODY PKG_GENERATOR AS
       
    END generatePackageScript;   
 
+   PROCEDURE createScriptFile(
+                                inDirectory     IN VARCHAR2,
+                                inFilename      IN VARCHAR2,
+                                inScripts       IN TSCRIPTS
+                              ) IS
+        v_file     SYS.UTL_FILE.FILE_TYPE;        
+   BEGIN
+        v_file := UTL_FILE.FOPEN(inDirectory, inFilename, 'W');                          
+            
+        FOR i IN 1..inScripts.COUNT LOOP
+            utl_file.put_line(v_file, inScripts(i).linea);
+        END LOOP;
+        UTL_FILE.FCLOSE(v_file); 
+        COMMIT;  
+
+   EXCEPTION
+      WHEN UTL_FILE.INVALID_OPERATION THEN
+         UTL_FILE.FCLOSE(v_file);
+         RAISE_APPLICATION_ERROR(-10505, 'Invalid file operation '||SQLERRM);         
+   END; 
+
    FUNCTION getTables(inOwner IN VARCHAR2)
       RETURN PKG_GENERATOR.tTables IS      
 

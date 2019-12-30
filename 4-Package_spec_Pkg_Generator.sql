@@ -71,6 +71,12 @@ CREATE OR REPLACE PACKAGE PKG_GENERATOR IS
                                   inTypeList     IN VARCHAR2)
       RETURN TSCRIPTS;
    
+   PROCEDURE createScriptFile(
+                                inDirectory     IN VARCHAR2,
+                                inFilename      IN VARCHAR2,
+                                inScripts       IN TSCRIPTS
+                              );
+   
    FUNCTION getTables(inOwner IN VARCHAR2)
       RETURN PKG_GENERATOR.tTables;
             
